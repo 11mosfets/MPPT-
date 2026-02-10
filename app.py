@@ -58,8 +58,8 @@ file_map = {
     }
 }
 file_map_input = {
-    "Tracking": "./Data/phoenix_clear_1s.csv",
-    "Fixed": "./Data/phoenix_cloudy_1s.csv"
+    "Clear Day": "./Data/phoenix_clear_1s.csv",
+    "Cloudy Day": "./Data/phoenix_cloudy_1s.csv"
 }
 
 # --- MAIN APP ---
@@ -95,8 +95,8 @@ df_track = load_data(paths["Tracking"])
 df_fixed = load_data(paths["Fixed"])
 
 # Load separate input data for Tab 0 (Input Data Details)
-input_paths = file_map_input
-df_input = load_data(input_paths["Tracking"])
+# Load separate input data for Tab 0 (Input Data Details)
+df_input = load_data(file_map_input[selected_day])
 
 # Only proceed if data loaded successfully
 if not df_track.empty and not df_fixed.empty:
